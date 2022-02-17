@@ -27,7 +27,9 @@ export default function App() {
 
   async function handleLogout() {
     // call the logout function
+    await logout();
     // clear the user in state
+    setUser('');
   }
 
   return (
@@ -35,6 +37,9 @@ export default function App() {
       <div className='App'>
         <header>
           {/* if there's a user, render a logout button here */}
+          {
+            user && <button onClick={ handleLogout }>Logout</button>
+          }
         </header>
         <main>
           <Switch>
@@ -53,7 +58,6 @@ export default function App() {
                   ? <ListPage />
                   : <AuthPage />
               }
-
             </Route>
           </Switch>
         </main>
