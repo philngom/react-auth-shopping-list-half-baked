@@ -21,7 +21,7 @@ export default function ListItemForm({ fetchItems }) {
 
     // clear the name and quantity in state to refresh the form
     setName('');
-    setQuantity(null);
+    setQuantity('');
   }
 
   return (
